@@ -1,7 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+
+# Clean up old seed data
+
+Card.destroy_all
+Category.destroy_all
+
+puts "Pre-existing data cleared"
+
+# Load cards with categories. Assign corresponding parent categories
+
+table = CSV.parse(File.read('./db/pecs.csv'), headers: true)
+
+table.each do |row|
+    title = row[0]
+    description = row[1]
+    image_url = row[2]
+    parent_category = Category.find_or_create_by(name: row[5], description: row[6])
+    subcategory = Category.find_or_create_by(name: row[3], description: row[4])
+    Category.update(subcategory.id, :parent_id => parent_category.id)
+    
+    Card.create(title: title, description: description, image_url: image_url, category: subcategory)
+end
+
+puts "Cards created with category information"
+puts "Parent categories created"
+puts "Child-parent relationships created for categories"
