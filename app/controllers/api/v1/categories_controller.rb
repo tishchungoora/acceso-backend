@@ -1,7 +1,7 @@
 class Api::V1::CategoriesController < ApplicationController
 
     def index
-        categories = Category.all
+        categories = Category.all.reject{|cat| cat.children.empty?}
         render json: categories
     end
 
