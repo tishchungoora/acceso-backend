@@ -4,6 +4,7 @@ require 'csv'
 
 Card.destroy_all
 Category.destroy_all
+Behaviour.destroy_all
 
 puts "Pre-existing data cleared"
 
@@ -25,3 +26,17 @@ end
 puts "Cards created with category information"
 puts "Parent categories created"
 puts "Child-parent relationships created for categories"
+
+# load behaviours
+
+behaviours = [
+    {name: "Routine", description: "Positive and non-challenging behaviour."},
+    {name: "Anxiety", description: "State of mind arising as a result of loss of patience, difficulty concentrating, difficulty sleeping, depression or becoming preoccupied with or obsessive about a subject."},
+    {name: "Challenging", description: "Meltdowns, self-injurious behaviour such as biting, spitting, hitting and hair pulling, pica, smearing, etc."},
+]
+
+behaviours.each do |behaviour|
+    Behaviour.create(behaviour)
+end
+
+puts "Behaviours created"
