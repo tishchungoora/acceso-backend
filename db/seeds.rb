@@ -2,11 +2,11 @@ require 'csv'
 
 # Clean up old seed data
 
+BoardCard.destroy_all
+Board.destroy_all
 Card.destroy_all
 Category.destroy_all
 Behaviour.destroy_all
-Board.destroy_all
-BoardCard.destroy_all
 
 puts "Pre-existing data cleared"
 
