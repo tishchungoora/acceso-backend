@@ -5,6 +5,8 @@ require 'csv'
 Card.destroy_all
 Category.destroy_all
 Behaviour.destroy_all
+Board.destroy_all
+BoardCard.destroy_all
 
 puts "Pre-existing data cleared"
 
@@ -40,3 +42,15 @@ behaviours.each do |behaviour|
 end
 
 puts "Behaviours created"
+
+# load test users
+
+users = [
+    {first_name: "John", last_name: "Doe", email: "john.doe@gmail.com", password: "password"}
+]
+
+users.each do |user|
+    User.create(user)
+end
+
+puts "Test users created"
