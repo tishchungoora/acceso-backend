@@ -32,6 +32,10 @@ class Api::V1::BoardsController < ApplicationController
         # destroy board
         board = Board.find(params[:id])
         board.destroy
+
+        # render boards json
+        boards = Board.all
+        render json: boards
     end
 
     private
