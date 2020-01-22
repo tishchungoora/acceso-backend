@@ -32,13 +32,6 @@ class Api::V1::UsersController < ApplicationController
         end
     end
 
-    def logout
-        # some kind of session delete
-        # session.delete :user_id
-        # redirect_to '/'
-    end
-
-
     private
 
     def user_params
