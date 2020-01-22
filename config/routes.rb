@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create]
       get '/validate_user', to: 'users#validate_user'
       post '/login', to: 'users#login'
+      post '/logout', to: 'users#logout'
     end
   end
 end

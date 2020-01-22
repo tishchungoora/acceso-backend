@@ -13,9 +13,7 @@ class Api::V1::BoardsController < ApplicationController
 
     def create
         # Create board with basic essential data
-        board = Board.create(title: params[:title], behaviour_id: params[:behaviour_id], user_id: params[:user_id])
-
-        board.user = @current_user
+        board = Board.create(title: params[:title], behaviour_id: params[:behaviour_id], user_id: @current_user.id)
 
         # Create board-card relationships
         board_cards = params[:cards]
