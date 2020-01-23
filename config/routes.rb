@@ -6,7 +6,9 @@ Rails.application.routes.draw do
       resources :board_cards
       resources :cards
       resources :categories
-      resources :users, only: [:index, :create, :show]
+      resources :users, only: [:index, :create]
+      get '/validate_user', to: 'users#validate_user'
+      post '/login', to: 'users#login'
     end
   end
 end

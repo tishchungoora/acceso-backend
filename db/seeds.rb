@@ -7,6 +7,7 @@ Board.destroy_all
 Card.destroy_all
 Category.destroy_all
 Behaviour.destroy_all
+User.destroy_all
 
 puts "Pre-existing data cleared"
 
@@ -46,7 +47,9 @@ puts "Behaviours created"
 # load test users
 
 users = [
-    {first_name: "John", last_name: "Doe", email: "john.doe@gmail.com", password: "password"}
+    {first_name: "J", last_name: "Doe", email: "j.doe@gmail.com", password: "833Fw.U7*KsM"},
+    {first_name: "John", last_name: "Doe", email: "john.doe@gmail.com", password: "password"},
+    {first_name: "Jane", last_name: "Doe", email: "jane.doe@gmail.com", password: "password"},
 ]
 
 users.each do |user|
