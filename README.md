@@ -6,7 +6,7 @@ Central to acceso is a Picture Exchange Communication System (PECS) where the ap
 
 A deployed version of the web application can be accessed [here](https://acceso.netlify.com/).
 
-![Image of acceso](https://i.imgur.com/ewUGFmI.png)
+![Image of acceso](https://i.imgur.com/QuN8dWz.png)
 
 ## Motivation
 
@@ -40,7 +40,7 @@ A deployed version of the web application can be accessed [here](https://acceso.
 ## Acknowledgements
 
 - [MyPECS.com](http://www.mypecs.com/)
-- [PECS USA](https://pecsusa.com/)
+- [Getty Images](https://www.gettyimages.co.uk/)
 - [Flaticon](https://www.flaticon.com/)
 - [ResponsiveVoice API](https://responsivevoice.org/)
 
